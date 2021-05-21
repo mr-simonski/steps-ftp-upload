@@ -53,6 +53,13 @@ inputs:
         Format examples: "$HOME/temp" or "$HOME/temp/")
       summary: ""
       is_required: true
+  - upload_source_path_filter: ""
+    opts:
+      title: "Source path file filter"
+      description: |
+        A regular expression for filtering file names to upload in this step, eg. "(\.js|\.css)$"
+      summary: ""
+      is_required: false
   - upload_target_path: ""
     opts:
       title: "Target/remote path"

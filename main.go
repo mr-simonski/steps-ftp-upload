@@ -18,6 +18,7 @@ type ConfigsModel struct {
 	Username   string
 	Password   string
 	SourcePath string
+	SourcePathFilter string
 	TargetPath string
 	DebugMode  bool
 }
@@ -28,6 +29,7 @@ func createConfigsModelFromEnvs() *ConfigsModel {
 		Username:   os.Getenv("username"),
 		Password:   os.Getenv("password"),
 		SourcePath: os.Getenv("upload_source_path"),
+		SourcePathFilter: os.Getenv("upload_source_path_filter"),
 		TargetPath: os.Getenv("upload_target_path"),
 		DebugMode:  os.Getenv("debug_mode") == "true",
 	}
@@ -39,6 +41,7 @@ func (configs ConfigsModel) print() {
 	log.Printf("- Username: %s", input.SecureInput(configs.Username))
 	log.Printf("- Password: %s", input.SecureInput(configs.Password))
 	log.Printf("- SourcePath: %s", configs.SourcePath)
+	log.Printf("- SourcePathFilter: %s", configs.SourcePathFilter)
 	log.Printf("- TargetPath: %s", configs.TargetPath)
 }
 

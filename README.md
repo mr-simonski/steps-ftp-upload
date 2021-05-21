@@ -1,7 +1,9 @@
 # FTP Upload
 
 FTP Upload step.
-Bitrise step to upload a single file or a folder to an FTP server
+Bitrise step to upload a single file or a folder to an FTP server.
+
+ADDITIONALLY: This repo contains a modification which allows to priorize file type within the upload process. That way you may upload all CSS/JS files first and then all HTML files at the end.
 
 ## How to use this Step
 
