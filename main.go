@@ -212,11 +212,11 @@ func (configs ConfigsModel) sync(ftp *goftp.FTP, localPath, remotePath string) e
 			}
 
 			// if file filter defined, check here
-			if len(SourcePathFilter) > 0 {
-				match, _ := regexp.MatchString(SourcePathFilter, path)
+			if len(configs.SourcePathFilter) > 0 {
+				match, _ := regexp.MatchString(configs.SourcePathFilter, path)
 				if !match {
 					if configs.DebugMode {
-						log.Warnf("Skipping file %s as not matched by regex pattern %s", path, SourcePathFilter)
+						log.Warnf("Skipping file %s as not matched by regex pattern %s", path, configs.SourcePathFilter)
 					}
 					return nil
 				}
