@@ -57,7 +57,7 @@ inputs:
     opts:
       title: "Source path file filter"
       description: |
-        A regular expression for filtering file names to upload in this step, eg. "(\.js|\.css)$"
+        A regular expression for filtering file names to upload in this step, eg. "(\\.js|\\.css)$" <-- please notice double escape of dot character
       summary: ""
       is_required: false
   - upload_target_path: ""
