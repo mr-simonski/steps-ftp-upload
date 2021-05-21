@@ -210,6 +210,11 @@ func (configs ConfigsModel) sync(ftp *goftp.FTP, localPath, remotePath string) e
 				rPath = filepath.Join(rPath, fi.Name())
 			}
 
+			// if file filter defined, check here
+			if configs.DebugMode {
+				log.Warnf("Skipping file %s", path)
+			}
+
 			if err = copyFile(ftp, path, rPath); err != nil {
 				return err
 			}
